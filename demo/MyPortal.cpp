@@ -11,9 +11,13 @@ MyPortal::MyPortal():Portal(){
 void MyPortal::processUserCommand(string command){
     vector<string> commands = stringSplit(command);
     ofstream PortalToPlatform;
+    //checking commmand types and accordingly writing requests to PortalToPlatform.txt file
+    //here pendingRequests vector store the pending requests
+    //we will delete a request from this vector after displaying its response
+    
+    //Start commmand
     if(commands[0] == "Start"){
         //file clear at the start 
-        //portalId increment
         PortalToPlatform.open("PortalToPlatform.txt", ios::app);
         if(PortalToPlatform.is_open()){
             PortalToPlatform<<portalId<<" "<<currentRequestId<<" "<<commands[0]<<endl;
@@ -21,6 +25,8 @@ void MyPortal::processUserCommand(string command){
             pendingRequests.push_back({currentRequestId, commands});
         }
     }
+    
+    //List commmand
     else if(commands[0] == "List"){
         PortalToPlatform.open("PortalToPlatform.txt", ios::app);
         if(PortalToPlatform.is_open()){
@@ -29,6 +35,8 @@ void MyPortal::processUserCommand(string command){
             pendingRequests.push_back({currentRequestId, commands});
         }
     }
+    
+    //Buy commmand
     else if(commands[0] == "Buy"){
         PortalToPlatform.open("PortalToPlatform.txt", ios::app);
         if(PortalToPlatform.is_open()){
@@ -37,6 +45,8 @@ void MyPortal::processUserCommand(string command){
             pendingRequests.push_back({currentRequestId, commands});
         }
     }
+    
+    //check command
     else if(commands[0] == "Check"){
         checkResponse();
     }
@@ -48,13 +58,18 @@ void MyPortal::processUserCommand(string command){
 void MyPortal::checkResponse(){
     ifstream PlatformToPortal;
     int currentRequest;
+    
+    //map responses - key = requestId, value - vector of responses of this requestId
     map<int, vector<vector<string>>> responses;
+    
+    //scanning through pendingRequests vector and checking that responses to these requests are there in PlatformToPortal.txt file
     for(int current=0; current<pendingRequests.size(); current++){
         currentRequest = pendingRequests[current].first;
 
         PlatformToPortal.open("PlatformToPortal.txt", ios::in);
         if(PlatformToPortal.is_open()){
             string responseStr;
+             //we are reading here entire file
             while(getline(PlatformToPortal, responseStr)){
                 vector<string> response = stringSplit(responseStr);
                 //portalId matching and requestID matching
@@ -66,10 +81,15 @@ void MyPortal::checkResponse(){
         }
 
     }
+    
+    //now will consider these responses stored in map 'responses' one by one
     for(auto current : responses){
-        int requestId = current.first;
-        vector<vector<string>> response = current.second;
+        int requestId = current.first; //requestId
+        vector<vector<string>> response = current.second; //vector of responsea to this request
         int reqIndex = -1;
+        
+        //again scanning through pendingRequests vector to get type of this request and to delete that request
+        //here reqIndex stores index of this request in pendingRequests vector
         for(int request=0; request<pendingRequests.size(); request++){
             if(pendingRequests[request].first == requestId){
                 reqIndex = request;
@@ -77,7 +97,10 @@ void MyPortal::checkResponse(){
             }
         }
         if(reqIndex >= 0){
-            vector<string> request = pendingRequests[reqIndex].second;
+            vector<string> request = pendingRequests[reqIndex].second; //getting this request
+            //checking type of current response of a request
+            
+            //for 'Start', displaying types of categories 
             if(request[0] == "Start"){
                 for(int ind1=0; ind1<response.size(); ind1++){
                     for(int ind2=2; ind2<response[0].size(); ind2++){
@@ -87,6 +110,7 @@ void MyPortal::checkResponse(){
                 }
             }
 
+            //for 'List', first we make objects of these products and then sort them according to sortOrder
             else if(request[0] == "List"){
                 vector<MyProduct> products;
                 for(int ind1=0; ind1<response.size(); ind1++){
@@ -124,6 +148,7 @@ void MyPortal::checkResponse(){
                 
             }
 
+            //for 'Buy', showing result of this purchase i.e. success or failure
             else if(request[0] == "Buy"){
                 for(int ind1=0; ind1<response.size(); ind1++){
                     for(int ind2=2; ind2<response[0].size(); ind2++){
@@ -149,7 +174,7 @@ void MyPortal::setPortalId(string portalId){
     this->portalId = portalId;
 }
 
-// private methods to use in class itself 
+// private methods to use in class itself which splits the string 
 vector<string> MyPortal::stringSplit(string s){
     stringstream ss(s);
     string word;

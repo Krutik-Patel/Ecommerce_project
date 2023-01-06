@@ -11,7 +11,7 @@ public:
     }
     static void main()
     {
-        // make portal objects and give them a PortalId
+        // making portal objects and give them a PortalId
         // portal will process userCommands and displays responses;
         MyPortal portal;
         cout << "Enter Portal_ID: ";
@@ -25,6 +25,8 @@ public:
         {
             string commandType;
             cin >> commandType;
+            //checking command types ans sending these commands to the portal
+            
             if (commandType == "Start")
             {
                 string command = commandType;
