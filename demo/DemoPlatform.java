@@ -65,7 +65,7 @@ public class DemoPlatform extends Platform {
 
 		// command types
 		if (requests[2].equals("Start")) {
-			System.out.print("Start Request___");
+			System.out.print("Start Request___::PortalID=" + portalID + " -- ");
 			String towrite = "";
 			for (Globals.Category category : Globals.Category.values()) {
 				towrite = towrite + category.name() + " "; // shows all the categories
@@ -76,7 +76,7 @@ public class DemoPlatform extends Platform {
 			writeOutput(towrite);
 			System.out.print("EXECUTED\n");
 		} else if (requests[2].equals("List")) {
-			System.out.print("List Request___");
+			System.out.print("List Request___::PortalID=" + portalID + " -- ");
 			ArrayList<Product> ptemp = new ArrayList<>(); // products available list of the category
 			for (int k = 0; k < sellerlist.size(); k++) // iterating through all the connected sellers
 			{
@@ -100,7 +100,7 @@ public class DemoPlatform extends Platform {
 
 			System.out.print("EXECUTED\n");
 		} else if (requests[2].equals("Buy")) {
-			System.out.print("Buy Request___");
+			System.out.print("Buy Request___::PortalID= " + portalID + " -- ");
 			String uniqueProdID = requests[3]; // unique id of the product
 			String quantStr = requests[4];
 			boolean result = false;
