@@ -1,34 +1,35 @@
 #ifndef MYPORTAL_H
 #define MYPORTAL_H
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #include "Portal.h"
 #include "MyProduct.h"
 #include "SortProduct.h"
 
-class MyPortal : public Portal{
-    public :
+class MyPortal : public Portal
+{
+public:
     MyPortal();
 
     void processUserCommand(string);
 
     void checkResponse();
 
-    //setters and getters
-    int getPortalId();
+    // setters and getters
+    string getPortalId();
 
-    void setPortalId(int);
+    void setPortalId(string);
 
     // private methods to use in class itself
-    private :  
+private:
     vector<string> stringSplit(string);
 
-    //private data members
-    private :
+    // private data members
+private:
     vector<pair<int, vector<string>>> pendingRequests;
     int currentRequestId;
-    int portalId;
+    string portalId;
 };
 
 #endif

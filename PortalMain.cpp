@@ -14,6 +14,10 @@ public:
         // make portal objects and give them a PortalId
         // portal will process userCommands and displays responses;
         MyPortal portal;
+        cout << "Enter Portal_ID: ";
+        string portalIDEntered;
+        cin >> portalIDEntered;
+        portal.setPortalId(portalIDEntered);
         // portal.setPortalId(currentPortalId);
         // currentPortalId++;
 
@@ -61,7 +65,7 @@ public:
     }
 
 private:
-    int currentPortalId;
+    string currentPortalId;
     vector<MyPortal> portals;
 };
 

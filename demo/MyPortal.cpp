@@ -5,7 +5,7 @@ using namespace std;
 
 MyPortal::MyPortal():Portal(){
     currentRequestId = 1;
-    portalId = 1;
+    portalId = "1";
 }
 
 void MyPortal::processUserCommand(string command){
@@ -58,7 +58,7 @@ void MyPortal::checkResponse(){
             while(getline(PlatformToPortal, responseStr)){
                 vector<string> response = stringSplit(responseStr);
                 //portalId matching and requestID matching
-                if((response[0] == to_string(portalId)) && (to_string(currentRequest) == response[1])){
+                if((response[0] == portalId) && (to_string(currentRequest) == response[1])){
                     responses[currentRequest].push_back(response);
                 }
             }
@@ -141,11 +141,11 @@ void MyPortal::checkResponse(){
 }
 
 //setters and getters
-int MyPortal::getPortalId(){
+string MyPortal::getPortalId(){
     return portalId;
 }
 
-void MyPortal::setPortalId(int portalId){
+void MyPortal::setPortalId(string portalId){
     this->portalId = portalId;
 }
 
