@@ -19,4 +19,4 @@ PortalMain.o: PortalMain.cpp
 	$(CC) -c PortalMain.cpp
 
 clean:
-	rm *.o ./test
+	rm *.o

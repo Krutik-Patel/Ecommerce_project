@@ -3,7 +3,8 @@ import demo.DemoPlatform;
 import ecomm.Platform;
 import ecomm.Seller;
 import demo.IMT2021024.*;
-import demo.IMT2021048.*;;
+import demo.IMT2021048.*;
+import demo.IMT2021518.*;
 
 public class PlatformMain {
 
@@ -20,8 +21,10 @@ public class PlatformMain {
 		// add sellers here
 		Seller s1 = new SellerKrutik("kurtik"); // sd1 derived class of seller created by Anshuman
 		Seller s2 = new SellerSuyash("suyas");
+		Seller s3 = new SellerAnshuman("anshuman");
 		s1.addPlatform(pf);
 		s2.addPlatform(pf);
+		s3.addPlatform(pf);
 		/*
 		 * Seller s2 = new ada("Seller2");
 		 * s1.addPlatform(pf);
