@@ -41,12 +41,14 @@ public class DemoPlatform extends Platform {
 				String data = myReader.nextLine();
 				String[] reqnoWords = data.split("\\s");
 				String requestID = reqnoWords[1];
+				String portalID = reqnoWords[0];
+				String key = portalID + " " + requestID;
 
 				// if the request has not been handeled till now
-				if (handled.containsKey(requestID) == false) {
+				if (handled.containsKey(key) == false) {
 					requests.add(data);
 					handleIndividualRequest(reqnoWords); // private method handling individual request
-					handled.put(requestID, true); // marking the requestID as handled
+					handled.put(key, true); // marking the requestID as handled
 				}
 			}
 			myReader.close();
