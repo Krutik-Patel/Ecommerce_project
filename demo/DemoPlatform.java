@@ -8,7 +8,7 @@ import ecomm.Globals;
 import ecomm.Product;
 
 public class DemoPlatform extends Platform {
-	private HashMap<String, Boolean> handled = new HashMap<String, Boolean>(); // the handled request ids
+	private HashMap<String, Boolean> handled = new HashMap<String, Boolean>(); // the handled ids
 	private ArrayList<Seller> sellerlist = new ArrayList<>(); // the sellers with the platform
 
 	public DemoPlatform() {
