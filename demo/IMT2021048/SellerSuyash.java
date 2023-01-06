@@ -89,7 +89,7 @@ public class SellerSuyash extends Seller {
             if (mobileList.get(mobile).getProductID().equals(productID)) {
                 found = true;
                 int avalquan = mobileList.get(mobile).getQuantity();
-                if (avalquan > quantity) {
+                if (avalquan >= quantity) {
                     buyable = true;
                     mobileList.get(mobile).setQuantity(avalquan - quantity);
                     System.out.println("# Left=" + mobileList.get(mobile).getQuantity() + " Asked=" + quantity
@@ -106,7 +106,7 @@ public class SellerSuyash extends Seller {
             if (bookList.get(book).getProductID().equals(productID)) {
                 found = true;
                 int avalquan = bookList.get(book).getQuantity();
-                if (avalquan > quantity) {
+                if (avalquan >= quantity) {
                     buyable = true;
                     bookList.get(book).setQuantity(avalquan - quantity);
                     System.out.println("# Left=" + mobileList.get(book).getQuantity() + " Asked=" + quantity + ": Purchase Successful");

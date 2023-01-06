@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#include "./demo/MyPortal.h"
+#include "./demo/DemoPortal.h"
 
 class PortalMain
 {
@@ -13,7 +13,7 @@ public:
     {
         // making portal objects and give them a PortalId
         // portal will process userCommands and displays responses;
-        MyPortal portal;
+        DemoPortal portal;
         cout << "Enter Portal_ID: ";
         string portalIDEntered;
         cin >> portalIDEntered;
@@ -25,7 +25,7 @@ public:
         {
             string commandType;
             cin >> commandType;
-            //checking command types ans sending these commands to the portal
+            // checking command types ans sending these commands to the portal
 
             if (commandType == "Start")
             {
@@ -68,7 +68,7 @@ public:
 
 private:
     string currentPortalId;
-    vector<MyPortal> portals;
+    vector<DemoPortal> portals;
 };
 
 int main()

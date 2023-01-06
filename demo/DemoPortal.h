@@ -7,10 +7,10 @@ using namespace std;
 #include "MyProduct.h"
 #include "SortProduct.h"
 
-class MyPortal : public Portal
+class DemoPortal : public Portal
 {
 public:
-    MyPortal();
+    DemoPortal();
 
     void processUserCommand(string);
 

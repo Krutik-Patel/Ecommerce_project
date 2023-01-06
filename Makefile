@@ -1,10 +1,10 @@
 CC = g++
 
-target: MyPortal.o MyProduct.o Portal.o SortProduct.o PortalMain.o
-	$(CC) MyPortal.o MyProduct.o Portal.o SortProduct.o PortalMain.o -o test
+target: DemoPortal.o MyProduct.o Portal.o SortProduct.o PortalMain.o
+	$(CC) DemoPortal.o MyProduct.o Portal.o SortProduct.o PortalMain.o -o test
 
-MyPortal.o: ./demo/MyPortal.cpp ./demo/MyPortal.h
-	$(CC) -c ./demo/MyPortal.cpp
+DemoPortal.o: ./demo/DemoPortal.cpp ./demo/DemoPortal.h
+	$(CC) -c ./demo/DemoPortal.cpp
 
 MyProduct.o: ./demo/MyProduct.cpp ./demo/MyProduct.h
 	$(CC) -c ./demo/MyProduct.cpp
