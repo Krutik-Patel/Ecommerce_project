@@ -2,7 +2,7 @@
 using namespace std;
 #include "SortProduct.h"
 
-
+//implementation of sorting functions required to sort the product objects
 bool SortProduct::sortName(MyProduct p1, MyProduct p2){
     return p1.getProductName() < p2.getProductName();
 }

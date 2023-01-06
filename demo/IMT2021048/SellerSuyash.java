@@ -10,6 +10,7 @@ public class SellerSuyash extends Seller {
 
     public SellerSuyash(String Id) {
         super(Id);
+        //creating book objects for my seller i.e. SellerSuyash
         ProductSuyash book1 = new BookSuyash();
         book1.setName("Atomic_Habits");
         book1.setProductID(this.getID() + "-Atomic_Habits");
@@ -31,6 +32,7 @@ public class SellerSuyash extends Seller {
         book3.setQuantity(9);
         bookList.add(book3);
 
+        //creating mobile objects for my seller i.e. SellerSuyash
         ProductSuyash mobile1 = new MobileSuyash();
         mobile1.setName("Realme_Pro");
         mobile1.setProductID(this.getID() + "-Realme_Pro");
@@ -82,6 +84,7 @@ public class SellerSuyash extends Seller {
     public boolean buyProduct(String productID, int quantity) {
         boolean buyable = false;
         boolean found = false;
+        //checking that given portalID is of any mobile or not in mobileList
         for (int mobile = 0; mobile < mobileList.size(); mobile++) {
             if (mobileList.get(mobile).getProductID().equals(productID)) {
                 found = true;
@@ -97,7 +100,8 @@ public class SellerSuyash extends Seller {
                 }
             }
         }
-
+        
+        //checking that given portalID is of any book or not in bookList
         for (int book = 0; book < bookList.size(); book++) {
             if (bookList.get(book).getProductID().equals(productID)) {
                 found = true;
@@ -115,7 +119,7 @@ public class SellerSuyash extends Seller {
         return buyable && found;
     }
 
-    private ArrayList<ProductSuyash> mobileList = new ArrayList<>();
-    private ArrayList<ProductSuyash> bookList = new ArrayList<>();
+    private ArrayList<ProductSuyash> mobileList = new ArrayList<>(); //list of all mobile objects
+    private ArrayList<ProductSuyash> bookList = new ArrayList<>(); //list of all book objects
     // private String myID;
 }
