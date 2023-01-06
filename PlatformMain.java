@@ -19,7 +19,7 @@ public class PlatformMain {
 		// team members.
 
 		// add sellers here
-		Seller s1 = new SellerKrutik("kurtik"); // sd1 derived class of seller created by Anshuman
+		Seller s1 = new SellerKrutik("kurtik");
 		Seller s2 = new SellerSuyash("suyas");
 		Seller s3 = new SellerAnshuman("anshuman");
 		s1.addPlatform(pf);

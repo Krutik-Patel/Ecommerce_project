@@ -37,6 +37,7 @@ public class SellerKrutik extends Seller {
 
     public void addPlatform(Platform thePlatform) {
         thePlatform.addSeller(this);
+        System.out.println("Seller " + this.getID() + " added to platform");
     }
 
     public ArrayList<Product> findProducts(Globals.Category whichOne) {
@@ -51,7 +52,7 @@ public class SellerKrutik extends Seller {
 
     public boolean buyProduct(String productID, int quantity) {
         // System.out.println("###buyProduct__[SELLER METHOD]__");
-        System.out.println("\nCandidates: Mobile " + mobileList.size());
+        // System.out.println("\nCandidates: Mobile " + mobileList.size());
         for (ProductKrutik prod : mobileList) {
             if (prod.getProductID().equals(productID)) {
                 System.out.println(prod.getProductID() + " " + (prod.getProductID().equals(productID)));
@@ -65,7 +66,7 @@ public class SellerKrutik extends Seller {
                 }
             }
         }
-        System.out.println("Candidates: Book " + bookList.size());
+        // System.out.println("Candidates: Book " + bookList.size());
         for (ProductKrutik prod : bookList) {
             if (prod.getProductID().equals(productID)) {
                 System.out.println(prod.getProductID() + " " + (prod.getProductID().equals(productID)));
@@ -79,7 +80,8 @@ public class SellerKrutik extends Seller {
                 }
             }
         }
-        System.out.println("\n# no match for productID___ TO_FIND=\"" + productID + "\" SELLER_ID=" + this.getID());
+        // System.out.println("\n# no match for productID___ TO_FIND=\"" + productID +
+        // "\" SELLER_ID=" + this.getID());
         return false;
     }
 }

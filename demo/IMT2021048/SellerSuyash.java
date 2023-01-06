@@ -59,6 +59,7 @@ public class SellerSuyash extends Seller {
     @Override
     public void addPlatform(Platform thePlatform) {
         thePlatform.addSeller(this);
+        System.out.println("Seller " + this.getID() + " added to platform");
     }
 
     // Seller to return listing of mobileList of specified Category
@@ -88,6 +89,11 @@ public class SellerSuyash extends Seller {
                 if (avalquan > quantity) {
                     buyable = true;
                     mobileList.get(mobile).setQuantity(avalquan - quantity);
+                    System.out.println("# Left=" + mobileList.get(mobile).getQuantity() + " Asked=" + quantity
+                            + ": Purchase Successful");
+                } else {
+                    System.out.println("# Left=" + mobileList.get(mobile).getQuantity() + " Asked=" + quantity
+                            + ": Purchase Failed");
                 }
             }
         }
@@ -99,6 +105,9 @@ public class SellerSuyash extends Seller {
                 if (avalquan > quantity) {
                     buyable = true;
                     bookList.get(book).setQuantity(avalquan - quantity);
+                    System.out.println("# Left=" + mobileList.get(book).getQuantity() + " Asked=" + quantity + ": Purchase Successful");
+                } else {
+                    System.out.println("# Left=" + mobileList.get(book).getQuantity() + " Asked=" + quantity + ": Purchase Failed");
                 }
             }
         }

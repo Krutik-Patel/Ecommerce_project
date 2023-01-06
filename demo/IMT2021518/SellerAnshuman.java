@@ -59,6 +59,10 @@ public class SellerAnshuman extends Seller {
                     result = true;
                     setquantity(products.get(i), products.get(i).getQuantity() - q); // remaining quantity of product
                                                                                      // with the seller
+                    System.out.println(
+                            "# Left=" + products.get(i).getQuantity() + " Asked=" + q + ": Purchase Successful");
+                } else {
+                    System.out.println("# Left=" + products.get(i).getQuantity() + " Asked=" + q + ": Purchase Failed");
                 }
             }
         }
