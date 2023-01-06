@@ -1,0 +1,6 @@
+*.class
+*.o
+PlatformToPortal.txt
+PortalToPlatform.txt
+test.exe
+.vscode/    
