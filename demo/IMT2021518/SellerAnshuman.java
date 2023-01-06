@@ -23,7 +23,7 @@ public class SellerAnshuman extends Seller {
         products.add(mob4);
 
         BookAnshuman bk1 = new BookAnshuman("ProgrammingJAVA", this.getID() + "-ProgrammingJAVA", 500, 100);
-        BookAnshuman bk2 = new BookAnshuman("ProgrammingCPP", this.getID() + "-ProgrammingJAVA", 500, 100);
+        BookAnshuman bk2 = new BookAnshuman("ProgrammingCPP", this.getID() + "-ProgrammingCPP", 500, 100);
         products.add(bk1);
         products.add(bk2);
 

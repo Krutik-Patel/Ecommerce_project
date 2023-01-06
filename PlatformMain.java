@@ -22,9 +22,9 @@ public class PlatformMain {
 		s1.addPlatform(pf);
 		s2.addPlatform(pf);
 		s3.addPlatform(pf);
-		
+
 		Scanner sc = new Scanner(System.in);
-		//checking that "check" command is there or not
+		// checking that "check" command is there or not
 		while (1 > 0) {
 			String inp = sc.next();
 			if (inp.equals("Check"))
@@ -32,6 +32,7 @@ public class PlatformMain {
 			if (inp.equals("End"))
 				break;
 		}
+		sc.close();
 
 	}
 

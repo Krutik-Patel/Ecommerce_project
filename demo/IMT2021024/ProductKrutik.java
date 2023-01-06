@@ -2,7 +2,6 @@ package demo.IMT2021024;
 
 import ecomm.Globals;
 import ecomm.Product;
-import ecomm.Globals.Category;
 
 public abstract class ProductKrutik extends Product {
 

@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
-#include "./MyPortal.h"
+#include "./DemoPortal.h"
 
 
-MyPortal::MyPortal():Portal(){
+DemoPortal::DemoPortal():Portal(){
     currentRequestId = 1;
     portalId = "1";
 }
 
-void MyPortal::processUserCommand(string command){
+void DemoPortal::processUserCommand(string command){
     vector<string> commands = stringSplit(command);
     ofstream PortalToPlatform;
     //checking commmand types and accordingly writing requests to PortalToPlatform.txt file
@@ -55,7 +55,7 @@ void MyPortal::processUserCommand(string command){
     currentRequestId++;
 }
 
-void MyPortal::checkResponse(){
+void DemoPortal::checkResponse(){
     ifstream PlatformToPortal;
     int currentRequest;
     
@@ -126,16 +126,16 @@ void MyPortal::checkResponse(){
                 }
                 //sorting of products according to sortOrder
                 string sortOrder = request[2];
-                if(sortOrder == "productName"){
+                if(sortOrder == "Name"){
                     sort(products.begin(), products.end(), SortProduct::sortName);
                 }
-                else if(sortOrder == "productUniqueName"){
+                else if(sortOrder == "UniqueName"){
                     sort(products.begin(), products.end(), SortProduct::sortUniqueName);
                 }
-                else if(sortOrder == "price"){
+                else if(sortOrder == "Price"){
                     sort(products.begin(), products.end(), SortProduct::sortPrice);
                 }
-                else if(sortOrder == "quantityAvailable"){
+                else if(sortOrder == "Quantity"){
                     sort(products.begin(), products.end(), SortProduct::sortQuantity);
                 }
                 
@@ -166,16 +166,16 @@ void MyPortal::checkResponse(){
 }
 
 //setters and getters
-string MyPortal::getPortalId(){
+string DemoPortal::getPortalId(){
     return portalId;
 }
 
-void MyPortal::setPortalId(string portalId){
+void DemoPortal::setPortalId(string portalId){
     this->portalId = portalId;
 }
 
 // private methods to use in class itself which splits the string 
-vector<string> MyPortal::stringSplit(string s){
+vector<string> DemoPortal::stringSplit(string s){
     stringstream ss(s);
     string word;
     vector<string> commands;
