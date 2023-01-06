@@ -5,6 +5,8 @@ import ecomm.Product;
 
 public abstract class ProductKrutik extends Product {
 
+    // all five methods getCategory, getName, getProductID, getPrice, getQuantity
+    // are methods inherited
     public abstract Globals.Category getCategory();
 
     public abstract String getName();
@@ -15,7 +17,9 @@ public abstract class ProductKrutik extends Product {
 
     public abstract int getQuantity();
 
+    // new methods to let the seller change the quantity and price of a product
     protected abstract void setQuantity(int quantity);
 
+    // new methods to let the seller change the quantity and price of a product
     protected abstract void setPrice(float price);
 }
