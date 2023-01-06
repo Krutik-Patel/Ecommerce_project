@@ -64,6 +64,8 @@ public class SellerAnshuman extends Seller {
                 } else {
                     System.out.println("# Left=" + products.get(i).getQuantity() + " Asked=" + q + ": Purchase Failed");
                 }
+
+                products.get(i).setpr((float) (products.get(i).getPrice() * ((Math.random()))));
             }
         }
         return result && found;

@@ -59,7 +59,11 @@ public class SellerKrutik extends Seller {
                 if (prod.getQuantity() >= quantity) {
                     prod.setQuantity(prod.getQuantity() - quantity);
                     System.out.println("# Left=" + prod.getQuantity() + " Asked=" + quantity + ": Purchase Successful");
+
+                    prod.setPrice((float) (prod.getPrice() * (0.5 + (Math.random()))));
+
                     return true;
+                    // change price here
                 } else {
                     System.out.println("# Left=" + prod.getQuantity() + " Asked" + quantity + ": Purchase Failed");
                     return false;
@@ -71,8 +75,11 @@ public class SellerKrutik extends Seller {
             if (prod.getProductID().equals(productID)) {
                 System.out.println(prod.getProductID() + " " + (prod.getProductID().equals(productID)));
                 if (prod.getQuantity() >= quantity) {
-                    System.out.println("# Left=" + prod.getQuantity() + " Asked=" + quantity + ": Purchase Successful");
                     prod.setQuantity(prod.getQuantity() - quantity);
+                    System.out.println("# Left=" + prod.getQuantity() + " Asked=" + quantity + ": Purchase Successful");
+
+                    prod.setPrice((float) (prod.getPrice() * (0.5 + (Math.random()))));
+
                     return true;
                 } else {
                     System.out.println("# Left=" + prod.getQuantity() + " Asked=" + quantity + ": Purchase Falied");
