@@ -4,6 +4,7 @@ import ecomm.Product;
 //import ecomm.Globals;
 
 public abstract class ProductSuyash extends Product {
+    //extra setters which are not there in Product class 
     public abstract void setName(String name);
 
     public abstract void setProductID(String productId);
