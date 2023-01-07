@@ -34,10 +34,10 @@ public class SellerKrutik extends Seller {
         bookList.add(book4);
 
         // create mobiles - Mobiles availavble with seller
-        MobileKrutik mob1 = new MobileKrutik("Iphone_11", this.getID() + "-Iphone_11", 10000, 15);
-        MobileKrutik mob2 = new MobileKrutik("Iphone_12", this.getID() + "-Iphone_12", 20000, 99);
-        MobileKrutik mob3 = new MobileKrutik("Iphone_13++", this.getID() + "-Iphone_13++", 50000, 50);
-        MobileKrutik mob4 = new MobileKrutik("Iphone_14++", this.getID() + "-Iphone_14++", 150000, 70);
+        MobileKrutik mob1 = new MobileKrutik("Iphone_11", this.getID() + "-Iphone_11", (float) 10000.50, 15);
+        MobileKrutik mob2 = new MobileKrutik("Iphone_12", this.getID() + "-Iphone_12", (float) 20000.50, 99);
+        MobileKrutik mob3 = new MobileKrutik("Iphone_13++", this.getID() + "-Iphone_13++", (float) 50000.00, 50);
+        MobileKrutik mob4 = new MobileKrutik("Iphone_14++", this.getID() + "-Iphone_14++", (float) 150000.50, 70);
 
         // add mobiles to mobileList
         mobileList.add(mob1);

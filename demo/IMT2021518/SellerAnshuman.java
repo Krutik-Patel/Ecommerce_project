@@ -13,17 +13,17 @@ public class SellerAnshuman extends Seller {
 
     public SellerAnshuman(String id) {
         super(id);
-        MobileAnshuman mob1 = new MobileAnshuman("Iphone13", this.getID() + "-Iphone13", 80000, 100);
-        MobileAnshuman mob2 = new MobileAnshuman("GalaxyS31", this.getID() + "-GalaxyS31", 20000, 100);
-        MobileAnshuman mob3 = new MobileAnshuman("Motorola", this.getID() + "-Motorola", 18000, 100);
-        MobileAnshuman mob4 = new MobileAnshuman("GalaxyF23", this.getID() + "-GalaxyF23", 17000, 100);
+        MobileAnshuman mob1 = new MobileAnshuman("Iphone13", this.getID() + "-Iphone13", (float) 80000.50, 100);
+        MobileAnshuman mob2 = new MobileAnshuman("GalaxyS31", this.getID() + "-GalaxyS31", (float) 20000.50, 100);
+        MobileAnshuman mob3 = new MobileAnshuman("Motorola", this.getID() + "-Motorola", (float) 18000.00, 100);
+        MobileAnshuman mob4 = new MobileAnshuman("GalaxyF23", this.getID() + "-GalaxyF23", (float) 17000.00, 100);
         products.add(mob1);
         products.add(mob2);
         products.add(mob3);
         products.add(mob4);
 
-        BookAnshuman bk1 = new BookAnshuman("ProgrammingJAVA", this.getID() + "-ProgrammingJAVA", 500, 100);
-        BookAnshuman bk2 = new BookAnshuman("ProgrammingCPP", this.getID() + "-ProgrammingCPP", 500, 100);
+        BookAnshuman bk1 = new BookAnshuman("ProgrammingJAVA", this.getID() + "-ProgrammingJAVA", (float) 500.00, 100);
+        BookAnshuman bk2 = new BookAnshuman("ProgrammingCPP", this.getID() + "-ProgrammingCPP", (float) 500.50, 100);
         products.add(bk1);
         products.add(bk2);
 
